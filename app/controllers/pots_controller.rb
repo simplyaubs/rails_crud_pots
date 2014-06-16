@@ -30,6 +30,12 @@ class PotsController < ApplicationController
     redirect_to pots_path
   end
 
+  def destroy
+    @pot = Pot.find(params[:id]).delete
+
+    redirect_to pots_path
+  end
+
   private
   def pot_params
     params.require(:pot).permit(:size, :color)
