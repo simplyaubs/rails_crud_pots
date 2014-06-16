@@ -1,0 +1,21 @@
+<%= form_for @pot do |f| %>
+  <p>
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.submit 'Add pot' %>
+  </p>
+<% end %>
+
+<%= @pots.each do |pot| %>
+  <ul>
+    <li>
+      <%= pot.size %>, <%= pot.color %>
+    </li>
+  </ul>
+<% end %>
