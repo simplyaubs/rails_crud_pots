@@ -38,7 +38,7 @@ class PotsController < ApplicationController
 
   private
   def pot_params
-    params.require(:pot).permit(:size, :color)
+    params.require(:pot).permit(:size, :color, :owner)
   end
 
 end

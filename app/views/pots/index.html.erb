@@ -8,6 +8,10 @@
     <%= f.text_field :color %>
   </p>
   <p>
+    <%= f.label :owner %>
+    <%= f.text_field :owner %>
+  </p>
+  <p>
     <%= f.submit 'Add pot' %>
   </p>
 <% end %>
@@ -15,7 +19,7 @@
 <%= @pots.each do |pot| %>
   <ul>
     <li>
-      <%= link_to "#{pot.size}", pot_path(pot) %>, <%= pot.color %>
+      <%= link_to "#{pot.size}", pot_path(pot) %>, <%= pot.color %>, <%= pot.owner %>
     </li>
   </ul>
 <% end %>

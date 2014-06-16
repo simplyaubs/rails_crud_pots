@@ -8,9 +8,11 @@ feature 'CRUD pots' do
     click_on 'Add a pot'
     fill_in 'Size', with: 'Large'
     fill_in 'Color', with: 'Orange'
+    fill_in 'Owner', with: 'Suzy'
     click_on 'Add pot'
     expect(page).to have_content 'Large'
     expect(page).to have_content 'Orange'
+    expect(page).to have_content 'Suzy'
   end
 
   scenario 'User can update a pot from list' do
@@ -19,20 +21,26 @@ feature 'CRUD pots' do
     click_on 'Add a pot'
     fill_in 'Size', with: 'Large'
     fill_in 'Color', with: 'Orange'
+    fill_in 'Owner', with: 'Suzy'
     click_on 'Add pot'
     expect(page).to have_content 'Large'
     expect(page).to have_content 'Orange'
+    expect(page).to have_content 'Suzy'
     click_on 'Large'
     expect(page).to have_content 'Large'
     expect(page).to have_content 'Orange'
+    expect(page).to have_content 'Suzy'
     click_on 'Edit'
     fill_in 'Size', with: 'Small'
     fill_in 'Color', with: 'Blue'
+    fill_in 'Owner', with: 'John'
     click_on 'Update pot'
     expect(page).to have_content 'Small'
     expect(page).to have_content 'Blue'
+    expect(page).to have_content 'John'
     expect(page).to_not have_content 'Large'
     expect(page).to_not have_content 'Orange'
+    expect(page).to_not have_content 'Suzy'
   end
 
   scenario 'User can delete a pot from list' do
@@ -41,14 +49,18 @@ feature 'CRUD pots' do
     click_on 'Add a pot'
     fill_in 'Size', with: 'Large'
     fill_in 'Color', with: 'Orange'
+    fill_in 'Owner', with: 'Suzy'
     click_on 'Add pot'
     expect(page).to have_content 'Large'
     expect(page).to have_content 'Orange'
+    expect(page).to have_content 'Suzy'
     click_on 'Large'
     expect(page).to have_content 'Large'
     expect(page).to have_content 'Orange'
+    expect(page).to have_content 'Suzy'
     click_on 'Delete'
     expect(page).to_not have_content 'Large'
     expect(page).to_not have_content 'Orange'
+    expect(page).to_not have_content 'Suzy'
   end
 end
